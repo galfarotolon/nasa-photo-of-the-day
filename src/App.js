@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios"
+import DataCard from "./dataCard.js"
 
 const url = "https://api.nasa.gov/planetary/apod"
 const apiKey = "5QLiZdjGEJNCTMappVfsVecGhN1L5gggWZ4tnrSu"
@@ -20,6 +21,7 @@ function App() {
       .then(res => {
         console.log(res.data)
         setGetData(res.data) //its an array of freinds
+
       })
       .catch(err => {
         console.log("not fetching any info")
@@ -28,24 +30,28 @@ function App() {
 
   }, [])
 
+  console.log(data)
 
-  const img = data.hdurl
+  // const img = data.hdurl
 
-  console.log(img)
+  // console.log(img)
 
   return (
     <div className="App">
-
-
-
-      <h1>{data.title}</h1>
-      <div className="date">Image Date: {data.date}</div>
-      <div><img src={img} /></div>
-      <div className="copyright">Photo by {data.copyright}. All Rights Reserved.</div>
-
-      <div className="explanation">{data.explanation}</div>
+      <DataCard cardData={data} />
 
     </div>
+
+
+    //<div className="App">
+    //   <h1>{data.title}</h1>
+    //   <div className="date">Image Date: {data.date}</div>
+    //   <div><img src={img} /></div>
+    //   <div className="copyright">Photo by {data.copyright}. All Rights Reserved.</div>
+
+    //   <div className="explanation">{data.explanation}</div>
+
+    // </div>
   );
 }
 
