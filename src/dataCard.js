@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+////STYLES//
 const Title = styled.h1
     `
 font-size: 3rem;
@@ -40,6 +41,7 @@ font-weight: 600;
 font-size: 1rem;
 `
 
+//////
 
 
 export default function DataCard({ cardData }) {
