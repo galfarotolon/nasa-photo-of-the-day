@@ -3,14 +3,13 @@ import React from 'react'
 export default function DataCard({ cardData }) {
 
 
+
     const img = cardData.hdurl
-
     console.log(img)
-
     console.log(cardData)
 
-    return (
 
+    return (
 
         <div>
             <h1>{cardData.title}</h1>
